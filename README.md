@@ -1,4 +1,4 @@
-#** osu! rank guesser**
+# osu! rank guesser
 Rankdle clone specifically for osu! built with HTML, CSS and Javascript. osu! rank guesser is used for entertainment purposes. I built this side project for learning purposes.
 
 ## 📦 **Tech Stack**
