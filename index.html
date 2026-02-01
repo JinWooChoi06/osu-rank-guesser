@@ -1,17 +1,123 @@
 <!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <title>osu! rank guesser</title>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-		<link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <video id="videoPlayer" controls>Your browser does not support the video tag.</video>
-        <button id="nextBtn">Next</button>
-        <form id="guessForm">
-            <input type="text" name = "rankGuess" placeholder="Enter your guess">
-            <button type="submit">Submit</button>
-        </form>
-        <script src="o!rg.js"></script>
-    </body>
-</html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osu! Rank Guesser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Assets/rhztaazxc2z11.png">
+</head>
+<body>
+
+    <div class="heading">
+        <h1>Osu! Rank Guesser</h1>
+        <p class="instruct">Watch the clip and guess the player’s rank!</p>
+        <p class="daily" id="dailychallengedate">Daily Challenge • 1/29/2026</p> <!--Make date dynamic and change acuratley-->
+    </div>
+    <div class="uploadarea">
+        <button class="upload">
+            <span> <img width="25px" src="Assets/upload.png" alt="upload"> Submit Your Clip</span>
+        </button>
+    </div>
+    <div class="rec1">        <!--Where we play submitted clips-->
+        <iframe width="1000px" height="563px" src="https://www.youtube.com/embed/bZzNFFoksD4?si=c4Uc8i-rtz54B6SL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    
+
+    <div class="rec2 resultscard" id="guesscard">
+            <h2>Guess the Player's Rank</h2>
+            <div class="ranktype">
+                <input class="slider" id="slider" type="range" min="1" max="999999" value="1" step="1">
+            </div>            
+            <div class="ranklabel">
+                    <span>1</span>
+                    <span>~10k</span>
+                    <span>~50k</span>                                                                           <!--need to calculate the difference between guess# and actual#-->
+                    <span>~100k</span>                                                                          <!--Have the number box change numbers as slider moves-->
+                    <span>~500k</span>
+                    <span>999999+</span>
+            </div>
+            <div class="ranknumbermanual">
+                <label for="number">Rank:</label>
+                <input type="number" id="guessForm" min="1" max="1000000000">
+            </div>
+
+        <!--Guess UI-->
+
+        <div class="swaparea">
+            <section class="panel guesspanel is-active">   <!--"is-active Should be default here"-->
+                <div class="submitbutton">
+                    <button type="submit" class="submit" >Submit Guess</button>
+                </div>
+            </section>
+
+        <!--Results UI-->
+
+            <section class="panel resultspanel">    <!--When clicking on "Submit Guess" remove "is-active" from Guess UI and place in this class-->
+                <div class="rec3">
+                    <div class="yourguess">
+                        <span class="guesslabel">Your Guess:</span>
+                        <span class="guessnum" id="guessrank">#100,000</span>     <!--Placeholder num for now-->
+                    </div>
+                    <div class="actrank">
+                        <span class="actlabel">Actual Rank:</span>
+                        <span class="actnum" id="actualrank">#8,500</span>        <!--Placeholder num for now-->
+                    </div>
+                    <div class="diff">
+                        <span class="difflabel">Difference:</span>
+                        <span class="diffnum" id="difference">91,500 ranks</span> <!--Placeholder num for now-->
+                    </div>
+                    <div class="resultdivide"></div>
+                    <div class="endofresult">
+                        <p class="comeback">Come back tommorrow for a new clip!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+        <!--Submit clips UI-->
+
+    <div class="submitmodal-container" id="modal-container"> <!--We add "active" to the class to display clip submit UI-->
+        <div class="submitmodal">
+            <div class="title">
+                <span class="submittitle">Submit Your Clip</span>
+                <button class="close" id="close">X</button> <!--For: closing popup-->
+            </div>
+
+            <div class="videoURL"> 
+                <label for="urlpaste">Video URL</label>
+                <input id="urlpaste" type="text" placeholder="https://www.youtube.com/watch?v=bZzNFFoksD4">
+            </div>
+
+            <div class="p1">
+                <p class="p1modal">Paste link of your Youtube video</p>
+            </div>
+
+            <div class="yourosurank"> 
+                <label for="osurank">Your Osu! Rank</label>
+                <input id="osurank" type="number" placeholder="#100000">
+            </div>
+
+            <div class="p2">
+                <p class="p2modal">Your rank at the time of the clip</p>
+            </div>
+
+            <div class="username"> 
+                <label for="user">Username</label>
+                <input id="user" type="text" placeholder="Ex: Chudmaxxer69420">
+            </div>
+
+            <div class="finalizecliparea">
+                <button class="finalizeclipbutton" type="submit"> <!--idk where this information goes but needs to be stored and used-->
+                    <span>Submit Clip</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

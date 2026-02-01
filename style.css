@@ -1,0 +1,428 @@
+html, body {
+  margin: 0;
+  height: 2000px;
+  width: 100%;
+}
+
+body {
+  background: url(Assets/Slide\ 16_9\ -\ 1.png) center/cover repeat;
+}
+
+.heading h1 {
+
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  color: transparent;
+  background-image: linear-gradient(#66B3FF,#FF66AB);
+  background-clip: text;
+  font-size: 33px;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.instruct {
+  text-align: center;
+  color: gray;
+  position: relative;
+  font-size: 23px;
+  margin-bottom: 0px;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.daily {
+  text-align: center;
+  color: gray;
+  position: relative;
+  font-size: 17px;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.rec1 {
+  width: 1000px;
+  aspect-ratio: 16/9;
+  border: 1px solid #FF66AB;
+  border-radius: 1rem;
+  margin: 0 auto;
+  box-shadow: 0 0 0 1px rgba(255, 102, 171, 0.10), 0 0 24px rgba(255, 102, 171, 0.18);
+}
+
+.rec1 iframe {
+  border-radius: 1rem;
+}
+
+.uploadarea {
+  width: 1000px;
+  height: 50px;
+  margin: 30px auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.upload img {
+  display: block;
+  height: 18px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.upload span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.upload {
+  all: unset;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 550;
+  color: white;
+  padding: .6rem 1.5rem;
+  border-radius: 1rem;
+  background-color: #66B3FF;
+  box-shadow: 0 0 0 1px #66B3FF1A, 0 0 24px #66B3FF2E;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.rec2 {
+  position: relative;
+  overflow: hidden;
+  width: 750px;
+  height: auto;
+  border: 1px solid #FF66AB;
+  border-radius: 1rem;
+  margin: 40px auto;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 1px rgba(255, 102, 171, 0.10), 0 0 24px rgba(255, 102, 171, 0.18);
+}
+
+.rec2.restultscard{
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.rec2 h2 {
+  color: white;
+  text-align: center;
+  margin: 2rem 0 1.25rem;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ranktype {
+  display: flex;
+  justify-content: center;
+  margin: 6px 32px;
+}
+
+.slider {
+  width: 100%;
+  height: 12px;
+  border-radius: 1rem;
+  -webkit-appearance: none;
+  background-color: #2a2a2a;
+  margin-top: 30px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #FF66AB;
+  cursor:pointer;
+  box-shadow: 0 0 0 1px rgba(255, 102, 171, 0.10), 0 0 24px rgba(255, 102, 171, 0.4);
+}
+
+.ranklabel {
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 35px;
+  margin-bottom: 32px;
+}
+
+.ranklabel span {
+  color: white;
+  margin: 0 .5rem;
+  font-size: .85rem;
+  opacity: .7;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ranknumbermanual {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  margin: 10px 32px;
+}
+
+.ranknumbermanual input {
+ background: #2a2a2a;
+ border: 1px solid grey;
+ border-radius: .75rem;
+ height: 42px;
+ padding: 0 14px;
+ color: white;
+ font-size: 1rem;
+ font-weight: 500;
+ flex: 1;
+ margin-top: 10px;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ranknumbermanual label {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 10px;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.submitbutton {
+  width: auto;
+  margin: 0 0px;
+
+}
+
+.submit {
+  all: unset;
+  display: block;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 550;
+  color: white;
+  width: 100%;
+  padding: 16px 0;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: #FF66AB;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+.swaparea {
+  position: relative;
+  margin: 16px;
+}
+
+.swaparea .panel {
+  display: none;
+}
+
+.swaparea .panel.is-active {
+  display:block;
+}
+
+.panel.guesspanel,
+.panel.resultspanel {
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+}
+
+.rec3 {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 250px;
+  border: 1px solid #FF66AB;
+  border-radius: 1rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 1px rgba(255, 102, 171, 0.10), 0 0 24px rgba(255, 102, 171, 0.18);
+  background-color: #2a2a2a;
+}
+
+.yourguess, .actrank, .diff {
+  margin: 28px 22px;
+  color: white;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+  display: flex;
+}
+
+.guessnum, .actnum, .diffnum {
+  margin-left: auto;
+}
+
+.resultdivide {
+  border: .05px solid #4d4d4d;
+  border-radius: .025px;
+  margin: auto 22px;
+}
+
+.comeback {
+  text-align: center;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 17px;
+  color: white;
+}
+
+.guessnum {
+  color: gray;
+}
+
+.actnum {
+  color: #66B3FF;
+}
+
+.diffnum {
+  color: #FF66AB;
+}
+
+.submitmodal-container {
+  display: none;
+}
+
+.submitmodal-container.active {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  inset: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  width: 100%;
+  height: 100%;
+}
+
+.submitmodal {
+  width: min(420px, 100%);
+  height: auto;
+  border: 1px solid #FF66AB;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 1px rgba(255, 102, 171, 0.10), 0 0 24px rgba(255, 102, 171, 0.18);
+  background-color: #2a2a2a;
+  padding: 36px;
+}
+
+.videoURL, .yourosurank, .username {
+  display:flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0 0 12px;
+}
+
+.videoURL label, .yourosurank label, .username label {
+  color: white;
+  font-weight: 400;
+}
+
+.videoURL input, .yourosurank input, .username input {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  background-color: #4d4d4d;
+  outline: none;
+  border: .1px solid white;
+  color: white;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+}
+
+.title, .videoURL, .yourosurank, .username, .finalizecliparea {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.p1modal, .p2modal {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.25;
+  opacity: .6;
+  color: white;
+}
+
+.p1, .p2 {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  margin: -6px 0 25px;
+}
+
+.title {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 20px;
+}
+
+.submittitle {
+  color: white;
+  font-weight: 500px;
+  font-size: 24px;
+}
+
+.close {
+  all: unset;
+  cursor: pointer;
+  color: gray;
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300px;
+  font-size: 24px;
+  background: transparent;
+}
+
+.finalizecliparea {
+  margin-top: 32px;
+}
+
+.finalizeclipbutton {
+  all: unset;
+  cursor: pointer;
+  width: 100%;
+  height: 42px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  background: #FF66AB;
+  color: white;
+  box-shadow: 0 0 0 1px rgba(255, 102, 171, 0.10), 0 0 24px rgba(255, 102, 171, 0.18);
+}
+
+
