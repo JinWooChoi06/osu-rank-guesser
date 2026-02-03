@@ -4,9 +4,19 @@ const input = document.getElementById("rankGuess");
 
 form.addEventListener("submit", function (event){
     event.preventDefault();
+    if (!currentClip) {
+        alert("Please click 'Next Video' first!");
+        return;
+    }
+
+    const userGuess = parseInt(input.value);
+    const score = compareGuess(userGuess, currentClip.rank);
+    
+    alert("You scored: " + score);
+
 });
 
-const guess = input.value;
+
 
 var rank = //getFromDb;
 
@@ -16,17 +26,17 @@ function compareGuess(guess, rank){
 }
 
 function rankToDigit(rank){
-    if (rank > 1000000 && rank <= 100000){
+    if (rank < 1000000 && rank >= 100000){
         return 6;
-    }else if (rank > 100000 && rank <= 10000){
+    }else if (rank < 100000 && rank >= 10000){
         return 5;
-    }else if (rank > 10000 && rank <= 1000){
+    }else if (rank < 10000 && rank >= 1000){
         return 4;
-    }else if (rank > 1000 && rank <= 100){
+    }else if (rank < 1000 && rank >= 100){
         return 3;
-    }else if (rank > 100 && rank <= 10){
+    }else if (rank < 100 && rank >= 10){
         return 2;
-    }else if (rank > 10 && rank <= 1){
+    }else if (rank < 10 && rank >= 1){
         return 1;
     }else{
         return 7;
@@ -81,10 +91,18 @@ const videoPlayer = document.getElementById("videoPlayer");
 const randomBtn = document.getElementById("nextBtn");
 // Store clips
 // Randomly Select a clip to send to html
-function playVideo(videoPath){
-    videoPlayer.src = videoPath;
+function playVideo() {
+    // 1. Get a random clip
+    currentClip = getRandomVideo();
+    // 2. Update the video player source
+    videoPlayer.src = currentClip.path;
+    // 3. Load and Play
     videoPlayer.load();
-    videoPlayer.play();
+    videoPlayer.play().catch(error => {
+        console.log("Auto-play blocked or loading error:", error);
+    });
+
+    console.log("Now playing clip with rank:", currentClip.rank);
 }
 
 function getRandomVideo(){
@@ -92,8 +110,14 @@ function getRandomVideo(){
     const index = Math.floor(Math.random() * database.length);
     return database[index];
 }
+nextBtn.addEventListener("click", function() {
+    // Reset the input field for the new round
+    document.getElementById("rankGuess").value = "";
+    
+    // Play the video
+    playVideo();
+});
 
-randomBtn.addEventListener("click", playVideo);
 
 // Get player information adjacent to the clips
 
