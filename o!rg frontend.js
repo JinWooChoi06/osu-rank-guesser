@@ -16,17 +16,17 @@ function compareGuess(guess, rank){
 }
 
 function rankToDigit(rank){
-    if (rank > 1000000 && rank <= 100000){
+    if (rank < 1000000 && rank <= 100000){
         return 6;
-    }else if (rank > 100000 && rank <= 10000){
+    }else if (rank < 100000 && rank <= 10000){
         return 5;
-    }else if (rank > 10000 && rank <= 1000){
+    }else if (rank < 10000 && rank <= 1000){
         return 4;
-    }else if (rank > 1000 && rank <= 100){
+    }else if (rank < 1000 && rank <= 100){
         return 3;
-    }else if (rank > 100 && rank <= 10){
+    }else if (rank < 100 && rank <= 10){
         return 2;
-    }else if (rank > 10 && rank <= 1){
+    }else if (rank < 10 && rank <= 1){
         return 1;
     }else{
         return 7;
