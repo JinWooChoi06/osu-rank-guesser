@@ -1,6 +1,6 @@
 const SUPABASE_URL = 'https://nzaovbuscxgdzzbqjjqp.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_jPWmkSJKrD083SCnfnXJ_w_DerPmGrN';
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 let database = []; 
 let currentVideo = null;
@@ -136,7 +136,7 @@ input.addEventListener("input", function() {
 
 // supabase
 async function getClips() {
-    const { data, error } = await supabase
+    const { data, error } = await supabaseClient
         .from('clips')
         .select('*');
 
