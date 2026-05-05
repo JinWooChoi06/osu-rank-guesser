@@ -5,6 +5,8 @@ Rankdle clone specifically for osu! built with HTML, CSS and Javascript. osu! ra
 - ```HTML```
 - ```CSS```
 - ```Javascript```
+- ```PostgreSQL```
+- ```Supabase```
 
 ## 💻 **Features** (wip)
 Here's what you can do with osu! rank guesser
