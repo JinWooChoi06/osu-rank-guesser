@@ -126,7 +126,7 @@ input.addEventListener("input", function() {
 // supabase
 async function getClips() {
     const { data, error } = await supabaseClient
-        .from('clips')
+        .from('osu-clips')
         .select('*');
 
     if (error) {
