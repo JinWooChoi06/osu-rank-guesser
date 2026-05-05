@@ -73,18 +73,7 @@ function _calculateScore(rank, digit, guess){
 
 // Video Clips
 const videoPlayer = document.getElementById("videoPlayer");
-const randomBtn = document.getElementById("nextBtn");
-// Store clips
-// Randomly Select a clip to send to html
 
-
-
-
-randomBtn.addEventListener("click", playVideo);
-
-// Get player information adjacent to the clips
-
-// Optional receive clips and send to database
 
 
 // gameplay loop
