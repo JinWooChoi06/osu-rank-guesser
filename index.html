@@ -23,7 +23,9 @@
         </button>
     </div>
     <div class="rec1">        <!--Where we play submitted clips-->
-        <iframe width="1000px" height="563px" src="https://www.youtube.com/embed/bZzNFFoksD4?si=c4Uc8i-rtz54B6SL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <video id="videoPlayer" width="1000px" height="563px" controls>
+            Your browser does not support the video tag.
+        </video>
     </div>
 
     
@@ -51,7 +53,7 @@
         <div class="swaparea">
             <section class="panel guesspanel is-active">   <!--"is-active Should be default here"-->
                 <div class="submitbutton">
-                    <button type="submit" class="submit" >Submit Guess</button>
+                    <button type="submit" class="submit" id="submitGuess" >Submit Guess</button>
                 </div>
             </section>
 
@@ -119,5 +121,7 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
 </body>
 </html>
