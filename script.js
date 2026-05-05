@@ -126,7 +126,7 @@ input.addEventListener("input", function() {
 // supabase
 async function getClips() {
     const { data, error } = await supabaseClient
-        .from('"osu! Rank Guesser dB"')
+        .from('osu! Rank Guesser dB')
         .select('*');
 
     if (error) {
