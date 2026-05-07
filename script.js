@@ -12,7 +12,6 @@ const submitBtn = document.getElementById("submitBtn");
 const resultGuess = document.getElementById("guessrank");
 const resultActual = document.getElementById("actualrank");
 
-var rank = //getFromDb;
 
 // rank calculation
 function compareGuess(guess, rank){
@@ -80,13 +79,20 @@ const videoPlayer = document.getElementById("videoPlayer");
 
 // gameplay loop
 submitBtn.addEventListener("click", function (event){
+    if (!currentVideo) {
+        alert("Still loading video data... please wait!");
+        return;
+    }
     const userGuess = parseInt(input.value);
+    console.log("Submitting Guess:", userGuess);
+    console.log("Actual Rank:", currentVideo.rank);
     if (isNaN(userGuess)) {
         alert("Please enter a valid number!");
         return;
     }
     // Capture the score
     const score = compareGuess(userGuess, currentVideo.rank);
+    console.log("Calculated Score:", score);
     // Update the UI fields
     resultGuess.innerText = `#${userGuess.toLocaleString()}`;
     resultActual.innerText = `#${currentVideo.rank.toLocaleString()}`;
@@ -95,6 +101,7 @@ submitBtn.addEventListener("click", function (event){
     // Show results
     document.querySelector(".guesspanel").classList.remove("is-active");
     document.querySelector(".resultspanel").classList.add("is-active");
+    console.log("Panels swapped!");
 });
 
 function nextRound(){
